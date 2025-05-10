@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name rl.mozihe.com;  # 设置你的域名或IP地址
+
+    root /var/www/html;  # 指向你打包后的文件所在目录
+
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;  # 解决前端路由的 404 问题
+    }
+}
